@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Create Your Own SoundCloud Jukebox</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="default.css" />
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.2.1.js"></script>
+</head>
+
+<body>
+
+<h1>Create Your Own Playlist!</h1>
+
+<form>
+  <label for="q" ></label>
+  <input name="q" type="text" id="userSearch" />
+  <input type="submit" value="search"/>
+</form>
+
+<div class="search-results">
+  <h1>Search Results</h1>
+</div>
+
+<div class="search-results-content"></div>
+
+<div class="new-playlist">
+	<h1>New Playlist</h1>
+</div>
+
+<span class="fa fa-pause-circle"></span>
+
+<span class="fa fa-play-circle-o"></span>
+
+
+<script src="search.js"></script>
+</body>
+
+</html>
