@@ -4,7 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Create Your Own SoundCloud Jukebox</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="normalize.css" />
+	<link rel="stylesheet" type="text/css" href="skeleton.css" />
 	<link rel="stylesheet" type="text/css" href="default.css" />
 	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -13,30 +17,46 @@
 
 <body>
 
-<h1>Create Your Own Playlist!</h1>
+<h1 class="main-header">Create Your Own Playlists</h1>
 
 <form>
-  <label for="q" ></label>
-  <input name="q" type="text" id="userSearch" />
+  <input name="q" type="text" id="userSearch" placeholder="Search by artist or song name..." />
+  <br>
   <input type="submit" value="search"/>
 </form>
 
-<div class="search-results">
-  <h1>Search Results</h1>
+<h4 class="add-playlist">Create Another Playlist</h4>
+<h4 class="add-playlist-message">Please add songs to this playlist before creating a new playlist</h4>
+<h4 class="max-playlists">You have created the max number of playlists</h4>
+
+<div class="search">
+	<div class="search-results">
+	  <h1>Search Results</h1>
+	</div>
+	<div class="search-results-content"></div>
 </div>
 
-<div class="search-results-content"></div>
-
-<div class="new-playlist">
-	<h1>New Playlist</h1>
+<div class="controls">
+	<i class="fa fa-pause"></i>
+	<i class="fa fa-play"></i>
 </div>
 
-<span class="fa fa-pause-circle"></span>
+<div class="playlist-collection">
+	<div class="new-playlist playlist-only">
+		<div class="current-song">
+			<h1>Playlist 1</h1>
+			<img class="song-artwork" src="" />
+			<h2 class="song-title"></h2>
+			<a class="song-link" href="" target="_blank"></a>
+		</div>
+	</div>
+</div>
 
-<span class="fa fa-play-circle-o"></span>
-
+<div class="back-forward">
+	<span class="back"><i class="fa fa-chevron-left"></i></span>
+	<span class="forward"><i class="fa fa-chevron-right"></i></span>
+</div>
 
 <script src="search.js"></script>
 </body>
-
 </html>
