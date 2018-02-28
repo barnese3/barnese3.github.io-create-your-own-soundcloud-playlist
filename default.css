@@ -192,6 +192,8 @@ form,
 
 .add-playlist {
   letter-spacing: 0;
+  padding: 0;
+  line-height: 30px;
 }
 
 .add-new {
@@ -313,31 +315,6 @@ input[type="submit"]:hover,
 	transition-timing-function: ease-in-out;
 	color: #fff;
 }
-
-/*.PanelAct {
-  left: 0;
-}
-
-.control { 
-  position : absolute ; 
-  bottom : 20px; 
-  right : 30px;
-}
-
-.control span {
-  background-color : rgba(0,0,0,0.1) ; 
-  padding : 5px; 
-  display : inline-block ;
-  vertical-align : top ;
-  margin-left : 5px ;
-  border-radius : 50%;
-  cursor : pointer ;
-  transition : 0.3s ease-in
-}
-
-.ContActive {
-  background-color : #bbb !important ;
-}*/
 
 @media (max-width: 768px) {
   .playlist-collection .playlist-only {
