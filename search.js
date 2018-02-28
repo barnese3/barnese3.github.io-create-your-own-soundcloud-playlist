@@ -48,6 +48,8 @@ function userSearch(searchTerm) {
 
 	console.log(response);
 
+	$(".search-results h1").css("display", "block");
+
 	let search_results = [];
 
 	for (let i = 0; i < response.length; i++) {
@@ -97,19 +99,30 @@ function userSearch(searchTerm) {
 	    		playMusic();
 
 			    SC.stream( '/tracks/' + $(this)[0].childNodes[2].innerHTML ).then(function(player){
-					search_player = player;   
+					search_player = player;
 					player.play();
 					player.on('finish', function() {
-						console.log("song ended");
-					    stopMusic();
-					  });
+						// if (document.getElementsByClassName("clicked-song")[0].nextSibling === null) {
+							console.log("song ended");
+					    	stopMusic();
+						// } else {
+						// 	// playNext();
+						// 	console.log(document.getElementsByClassName("clicked-song")[0].nextSibling);
+						// }
+					 });
 				});
-
 			});
 	});
 
 }); /*end of .then*/
 } /*end of userSearch*/
+
+// function playNext(id) {
+// 	SC.stream( '/tracks/' + id ).then(function(player){
+// 		search_player = player;
+// 		player.play();
+// 	});
+// }
 
 // Clears the previous search results when the user performs a new search
 document.addEventListener("DOMContentLoaded", function() {
@@ -166,6 +179,20 @@ document.addEventListener("DOMContentLoaded", function() {
 		} else {
 			// current_playlist_count gets 1 added to it
 			current_playlist_count++;
+
+
+
+
+			// $(".playlist-collection").find(".control").append("<span></span>");
+			// document.querySelector(".control span").addEventListener("click", function() {
+			// 	console.log($(this));
+			// })
+
+
+
+
+
+
 
 			// another new-playlist div(with current_playlist_count appended to its class name) is added to html under playlist-collection
 			playlist_collection.innerHTML += 
@@ -238,3 +265,50 @@ back.addEventListener("click", function() {
 		showCurrentPlaylist();
 	}
 })
+
+
+
+
+
+// $(document).ready(function() {
+//   $(".playlist-collection").each(function(){
+//     var This = $(this);
+//     var Nums = This.find(".playlist-only").length;
+//     This.find(".playlist-only:first").addClass("PanelAct");
+//     // This.append("<div class='control'></div>") ;
+//     This.find(".playlist-only").not(".PanelAct")
+//       .css("left","100%")
+//     // for ( i=0 ; i<Nums ; i++) {
+//     //   This.find(".control").append("<span></span>") ;
+//     // }
+//     This.find(".control span:eq(0)").addClass("ContActive");
+    
+//     This.find(".control span").click(Reviews);
+    
+//     function Reviews(){
+//       var loc = $(this).index();
+//       var ActivLoc = This.find(".ContActive").index();
+
+//       $(this).addClass("ContActive")
+//         .siblings().removeAttr("class");
+      
+//       if ( loc > ActivLoc ) {
+//         var Dire = '100%'
+//         var IDire = '-100%'
+//       }
+//       if ( loc < ActivLoc ) {
+//         var Dire = '-100%'
+//         var IDire = '100%'
+//       }
+
+//       This.find(".playlist-only").not(".PanelAct")
+//       .css("left",Dire) ;
+//       This.find(".playlist-only:eq("+loc+")")
+//       .animate({'left':'0'},speed)
+//       .addClass("PanelAct")
+//       .siblings(".PanelAct")
+//       .removeClass("PanelAct")
+//       .animate({'left':IDire},speed);
+//     }
+//   });
+// });

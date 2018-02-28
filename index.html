@@ -3,7 +3,8 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Create Your Own SoundCloud Jukebox</title>
+	<title>Create Your Own SoundCloud Playlists</title>
+	<link rel="shortcut icon" type="image/png" href="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519586-083_Music-128.png"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -25,15 +26,17 @@
   <input type="submit" value="search"/>
 </form>
 
-<h4 class="add-playlist">Create Another Playlist</h4>
-<h4 class="add-playlist-message">Please add songs to this playlist before creating a new playlist</h4>
-<h4 class="max-playlists">You have created the max number of playlists</h4>
-
 <div class="search">
 	<div class="search-results">
 	  <h1>Search Results</h1>
 	</div>
 	<div class="search-results-content"></div>
+</div>
+
+<div class="add-new">
+	<button class="add-playlist">Create Another Playlist</button>
+	<h4 class="add-playlist-message">Please add songs to this playlist before creating a new playlist</h4>
+	<h4 class="max-playlists">You have created the max number of playlists</h4>
 </div>
 
 <div class="controls">
@@ -50,6 +53,7 @@
 			<a class="song-link" href="" target="_blank"></a>
 		</div>
 	</div>
+	<div class='control'></div>
 </div>
 
 <div class="back-forward">
@@ -57,6 +61,7 @@
 	<span class="forward"><i class="fa fa-chevron-right"></i></span>
 </div>
 
+<!-- <script>speed = 600</script> -->
 <script src="search.js"></script>
 </body>
 </html>

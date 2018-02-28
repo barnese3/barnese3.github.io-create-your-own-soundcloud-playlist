@@ -12,6 +12,19 @@ body{
 	animation-direction: alternate;
 }
 
+h6 {
+	line-height: 40px;
+	padding: 12px;
+	color: #000;
+}
+
+/*scroll animation used on background image of body*/
+@keyframes scroll{
+  100%{
+    background-position: 10000px -3000px;
+  }
+}
+
 @-webkit-keyframes scroll{
   100%{
     background-position:0px -3000px;
@@ -36,16 +49,116 @@ body{
   }
 }
 
-@keyframes scroll{
-  100%{
-    background-position: 10000px -3000px;
+/*springy text animation used on main header*/
+@keyframes springy-text {
+  0%   {
+    letter-spacing: 1.2em;
+    color: rgb(156, 190, 223);
+  }
+  100%   {
+    letter-spacing: 0.1em;
+    color: white;
   }
 }
 
-h6 {
-	line-height: 40px;
-	padding: 12px;
-	color: #000;
+@-moz-keyframes springy-text {
+  0%   {
+    letter-spacing: 1.2em;
+    color: rgb(156, 190, 223);
+  }
+  100%   {
+    letter-spacing: 0.1em;
+    color: white;
+  }
+}
+
+@-webkit-keyframes springy-text {
+  0%   {
+    letter-spacing: 1.2em;
+    color: rgb(156, 190, 223);
+  }
+  100%   {
+    letter-spacing: 0.1em;
+    color: white;
+  }
+}
+
+@-ms-keyframes springy-text {
+  0%   {
+    letter-spacing: 1.2em;
+    color: rgb(156, 190, 223);
+  }
+  100%   {
+    letter-spacing: 0.1em;
+    color: white;
+  }
+}
+
+@-o-keyframes springy-text {
+  0%   {
+    letter-spacing: 1.2em;
+    color: rgb(156, 190, 223);
+  }
+  100%   {
+    letter-spacing: 0.1em;
+    color: white;
+  }
+}
+
+.main-header {
+	color: white;
+	animation: springy-text 1s ease 0s 1 normal forwards;
+	 -webkit-animation: springy-text 1s ease 0s 1 normal forwards;
+	  -moz-animation: springy-text 1s ease 0s 1 normal forwards;
+	   -ms-animation: springy-text 1s ease 0s 1 normal forwards;
+	    -o-animation: springy-text 1s ease 0s 1 normal forwards;
+
+}
+
+/*animation fadein used on form*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+form {
+	animation: fadein 3s;
+	 -webkit-animation: fadein 3s;
+	  -moz-animation: fadein 3s;
+	   -ms-animation: fadein 3s;
+	    -o-animation: fadein 3s;
+
+}
+
+h6, 
+p,
+.add-playlist,
+.fa {
+  cursor: pointer;
 }
 
 .main-header,
@@ -61,6 +174,10 @@ form,
 	display: none;
 }
 
+.search-results h1 {
+	display: none;
+}
+
 .h6-img {
 	border-radius: 100%;
 	height: 40px;
@@ -73,17 +190,26 @@ form,
 	background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
 }
 
+.add-playlist {
+  letter-spacing: 0;
+}
+
+.add-new {
+  text-align: center;
+}
+
 .add-playlist-message,
 .max-playlists {
+	text-align: center;
 	opacity: 0;
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    transition-property: all;
-    -webkit-transition-duration: 1s;
-    -moz-transition-duration: 1s;
-    transition-duration: 1s;
-    -webkit-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .playlist-collection {
@@ -168,7 +294,57 @@ input#userSearch {
 .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
 	background-color: #fff;
 	width: 250px;
-	letter-spacing: 15px;
+	letter-spacing: 8px;
 	height: 100%;
 	font-size: 15px;
+}
+
+input[type="submit"]:hover,
+.add-playlist:hover {
+	background-color: rgb(156, 190, 223);
+	border-color: rgb(156, 190, 223);
+	-webkit-transition-property: all;
+	-moz-transition-property: all;
+	transition-property: all;
+	-webkit-transition-duration: .4s;
+	-moz-transition-duration: .4s;
+	transition-duration: .4s;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+	color: #fff;
+}
+
+/*.PanelAct {
+  left: 0;
+}
+
+.control { 
+  position : absolute ; 
+  bottom : 20px; 
+  right : 30px;
+}
+
+.control span {
+  background-color : rgba(0,0,0,0.1) ; 
+  padding : 5px; 
+  display : inline-block ;
+  vertical-align : top ;
+  margin-left : 5px ;
+  border-radius : 50%;
+  cursor : pointer ;
+  transition : 0.3s ease-in
+}
+
+.ContActive {
+  background-color : #bbb !important ;
+}*/
+
+@media (max-width: 768px) {
+  .playlist-collection .playlist-only {
+    width: 85%;
+  }
+
+  .back {
+    padding-right: 70%;
+  }
 }
